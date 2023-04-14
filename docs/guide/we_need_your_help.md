@@ -7,21 +7,27 @@ Logon via SSH and stop the LightningATM service, make a backup from directory Li
     $ sudo systemctl stop LightningATM.service
     $ cp -r -v LightningATM LightningATM_Backup
     $ git clone --branch lnbits-compatibility https://github.com/21isenough/LightningATM.git temp
-    $ rsync -a temp/ LightningATM/
+    $ rsync -a -v temp/ LightningATM/
     $ sudo rm -r temp
     
 ### 2. Edit config.ini
 
     $ nano ~/.lightningATM/config.ini
 
-and Add the following
+#### 2.1 Add the following
 
     [lnbits]
     # api credentials
     url = https://legend.lnbits.com/api/v1
     apikey = 
-   
-Note: User you apikey from legend.lnbits.com wallet  
+
+`Note:` User your apikey (API Info / Admin key) from legend.lnbits.com wallet with funding 
+
+#### 2.2 Change active wallet to lnbits
+
+    activewallet = lnbits
+    
+CTRL+x -> y -> Enter
    
 ### 3. Start and test the version
 
