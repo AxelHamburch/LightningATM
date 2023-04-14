@@ -49,7 +49,7 @@ Make the backup the major version again and then delete the backup.
     $ sudo rm -r LightningATM_Backup
 
 - Everthing should now be as befor. Even the wallat data.
-- You can clean up the coinfig.ini, but you don't have to.
+- You can clean up the coinfig.ini, but you don't have to, except the activewallet.
 
 ### 5. Final step
 
