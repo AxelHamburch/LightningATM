@@ -1,39 +1,27 @@
-## Stagnation is regression. Update your ATM! 📜🧐
+## Instruction for testing the LNbits interface 📜🧐
 
-Many updates have been made in the last two months. 💪😅 Updates for more reliability and some nice features. See the [guidelines](https://github.com/21isenough/LightningATM#installation-guideline) for more information and try it out.
+### 1. Update to the new version
 
---- 
-## Steps to update
-### 1. Expand the config.ini with "language" and "camera" (If not allready done)
-
-Because we are also expanding the config.ini with this update, we unfortunately have to expand config.ini manually, otherwise we get an error message when starting the ATM. Expanding is not difficult and does not have to be undone later. First we logon again via SSH and stop the LightningATM service and call up the config.ini.
-
-    $ sudo systemctl stop LightningATM.service
-    $ nano ~/.lightningATM/config.ini
-    
-Then we add the following text between `centname = cent` and `# Set the Fee in %`
-
-    # Set language: "en", "de", "fr", "it", "es", "pt", "tr" currently available 
-    # Code 2 from https://www.science.co.il/language/Codes.php
-    language = en
-
-    # Do you have a camera? "False" or "True"
-    camera = False
-    
-<img src="../pictures/we_need_your_help_config.ini.png" width="600">
-
-- When you finshed with changings in the config.ini, save and exit the editor: `CTRL+x -> y -> ENTER`
-- `Help:` If you want to copy and paste the text, take the text to the clipboard and then place the cursor where you want to paste the text and right-click to paste. But important is just `language = en` and `camera = False`.
-
-### 2. Update to the new version
-
-Logon via SSH and stop the LightningATM service, make a backup from directory LightningATM, clone the new Github to "temp", sync once from "temp" to "LightningAMT" and then delete the "temp" directory that is no longer needed.
+Logon via SSH and stop the LightningATM service, make a backup from directory LightningATM clone the new Github to "temp", sync once from "temp" to "LightningAMT" and then delete the "temp" directory that is no longer needed.
 
     $ sudo systemctl stop LightningATM.service
     $ cp -r -v LightningATM LightningATM_Backup
-    $ git clone --branch master https://github.com/21isenough/LightningATM.git temp
+    $ git clone --branch lnbits-compatibility https://github.com/21isenough/LightningATM.git temp
     $ rsync -a temp/ LightningATM/
     $ sudo rm -r temp
+    
+### 2. Edit config.ini
+
+    $ nano ~/.lightningATM/config.ini
+
+and Add the following
+
+    [lnbits]
+    # api credentials
+    url = https://legend.lnbits.com/api/v1
+    apikey = 
+   
+Note: User you apikey from legend.lnbits.com wallet  
    
 ### 3. Start and test the version
 
@@ -64,6 +52,5 @@ Restart the LightningATM service
     $ sudo systemctl start LightningATM.service
 
 - Your ATM should now restart as usual
-- If you find some issues or have some suggestions call @AxelHamburch in the telegram group or on Github
 
-## Thank you for your support! ❤️
+## Thank you for your patience! ❤
