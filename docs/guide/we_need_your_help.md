@@ -27,7 +27,7 @@ Logon via SSH and stop the LightningATM service, make a backup from directory Li
 
     activewallet = lnbits
     
-CTRL+x -> y -> Enter
+`CTRL+x` -> `y` -> `Enter`
    
 ### 3. Start and test the version
 
