@@ -19,9 +19,15 @@ Logon via SSH and stop the LightningATM service, make a backup from directory Li
     [lnbits]
     # api credentials
     url = https://legend.lnbits.com/api/v1
+    # LNbits Wallet -> API info -> Admin Key
     apikey = 
+    # One of "invoice" or "lnurlw"
+    method = lnurlw
+    # only for lnurlw
+    # millisseconds to redeem the lnurlw
+    timeout = 90000
 
-`Note:` User your apikey (API Info / Admin key) from legend.lnbits.com wallet with funding 
+`Note:` Customize your admin key (apikey) from Wallet with funding
 
 #### 2.2 Change active wallet to lnbits
 
