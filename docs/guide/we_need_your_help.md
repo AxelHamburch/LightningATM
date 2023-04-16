@@ -2,7 +2,7 @@
 
 We have now added LNbits as a new funding source for the LightningATM. 🎉
 
-Before we finally merge the change, we want to discuss the [pull request](https://github.com/21isenough/LightningATM/pull/78) a little bit. But you can already test the interface and for that we wrote this small guide here. It is for existing ATM's that need a new funding source. If you are setting up a new LightningATM, you just have to change under ["Perform an update, clone the ATM Github and install necessary additional options"](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#perform-an-update-clone-the-atm-github-and-install-necessary-additional-options) the line `$ git clone https://github.com/21isenough/LightningATM.git` to the temporary new path `https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` with the new LNbits interface. Later we will also adjust the main documentation for this.
+Before we finally merge the change, we want to discuss the [pull request](https://github.com/21isenough/LightningATM/pull/78) a little bit. But you can already test the interface and for that we wrote this small guide here. It is for existing Pocket ATM's that need a new funding source. If you are setting up a new LightningATM, you just have to change under ["Perform an update, clone the ATM Github and install necessary additional options"](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#perform-an-update-clone-the-atm-github-and-install-necessary-additional-options) the line `$ git clone https://github.com/21isenough/LightningATM.git` to the temporary new path `https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` with the new LNbits interface. Later we will also adjust the main documentation for this and we will test it for the ATM with camera.
 
 ### First of all, here's a quick guide on how to set up an LNbits wallet:
 
@@ -22,10 +22,10 @@ In the following we will show you how to update your LightningATM online. Connec
 We will load the new repository on the ATM and activate it. You have to stop the `LightningATM.service` once, otherwise you will get a strange display and the ATM will not work properly.  
 
     $ sudo systemctl stop LightningATM.service
-    $ cd ~/LightningATM
-    $ git remote add k9ert git@github.com:k9ert/LightningATM.git
-    $ git fetch k9ert
-    $ git checkout lnbits-compatibility-k9ert
+    $ cp -r LightningATM LightningATM_Backup
+    $ git clone --branch lnbits-compatibility-k9ert https://github.com/k9ert/LightningATM.git temp
+    $ rsync -a temp/ LightningATM/
+    $ sudo rm -r temp
     
 Now your ATM is set to the new version. Next you have to configure it for the new wallet.
     
