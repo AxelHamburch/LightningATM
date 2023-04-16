@@ -6,7 +6,7 @@ Before we finally merge the change, we want to test and discuss the [pull reques
 
 old: `$ git clone https://github.com/21isenough/LightningATM.git`
 
-new: `$ git clone https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` 
+new: `$ git clone https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert.git` 
 
 Later we will also adjust the main documentation for this and we will test it for the ATM with camera.
 
