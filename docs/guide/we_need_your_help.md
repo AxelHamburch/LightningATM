@@ -75,7 +75,7 @@ Update procedure
 
 To debug: Launch a second terminal window, login with ssh and access logs with 
 
-    $ tail -f ~/.lightningATM/debug.log`
+    $ tail -f ~/.lightningATM/debug.log
     
 Log file to debug
 ![Log file to debug](../pictures/we_need_your_help_logs.png)
