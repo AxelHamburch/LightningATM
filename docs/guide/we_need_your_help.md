@@ -4,7 +4,7 @@ We have now added LNbits as a new funding source for the LightningATM. 🎉
 
 Before we finally merge the change, we want to discuss the [pull request](https://github.com/21isenough/LightningATM/pull/78) a little bit. But you can already test the interface and for that we wrote this small guide here. It is for existing Pocket ATM's that need a new funding source. If you are setting up a new LightningATM, you just have to change under ["Perform an update, clone the ATM Github and install necessary additional options"](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#perform-an-update-clone-the-atm-github-and-install-necessary-additional-options) the line `$ git clone https://github.com/21isenough/LightningATM.git` to the temporary new path `https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` with the new LNbits interface. Later we will also adjust the main documentation for this and we will test it for the ATM with camera.
 
-### First of all, here's a quick guide on how to set up an LNbits wallet:
+### 1. Quick guide on how to set up an LNbits wallet
 
 - Go e.g. to the [ledgend.lnbits.com](https://legend.lnbits.com/) demo server
 - Assign a name and press `ADD A NEW WALLET`
@@ -18,7 +18,7 @@ Before we finally merge the change, we want to discuss the [pull request](https:
 LNbits Wallet
 ![LNbits Wallet](../pictures/we_need_your_help_LNbits.png)
 
-### 1. Update the LigthningATM 
+### 2. Update the LigthningATM 
 
 Next we will show you how to update your LightningATM online. Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password.
 
@@ -32,7 +32,7 @@ We will load the new repository on the ATM and activate it. You have to stop the
     
 Now your ATM is set to the new version. Next you have to configure it for the new wallet.
     
-### 2. Edit the config.ini
+### 3. Edit the config.ini
 
     $ nano ~/.lightningATM/config.ini
 
@@ -57,7 +57,7 @@ Now your ATM is set to the new version. Next you have to configure it for the ne
     
 Save and exit editor: `CTRL+x` -> `y` -> `Enter`
    
-### 3. Start ATM for testing
+### 4. Start ATM for testing
 
     $ cd LightningATM
     $ ./app.py
@@ -76,7 +76,7 @@ To debug: Launch a second terminal window, login with ssh and access logs with
 Log file to debug
 ![Log file to debug](../pictures/we_need_your_help_logs.png)
 
-### 4. Final step
+### 5. Final step
 
 Restart the LightningATM service
 
