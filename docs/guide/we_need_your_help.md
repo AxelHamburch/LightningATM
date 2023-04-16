@@ -22,6 +22,7 @@ In the following we will show you how to update your LightningATM online. Connec
 We will load the new repository on the ATM and activate it. You have to stop the `LightningATM.service` once, otherwise you will get a strange display and the ATM will not work properly.  
 
     $ sudo systemctl stop LightningATM.service
+    $ cd ~/LightningATM
     $ git remote add k9ert git@github.com:k9ert/LightningATM.git
     $ git fetch k9ert
     $ git checkout lnbits-compatibility-k9ert
