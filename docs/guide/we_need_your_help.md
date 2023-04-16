@@ -12,6 +12,7 @@ Before we finally merge the change, we want to discuss the [pull request](https:
 - Understand the warning! It is a demo server for testing. Keep only the necessary Satoshis in the wallet. 
 - See a pop-up menu box on the right or bottom labeled `API info` and open it.
 - You should see `Admin key: 7cd51a8a04...`. The number-letter combination is the `apikey` you need right now. 
+- Now install an extension. Go to `Extensions`, search for `LNURLw` and activate it with `ENABLE`.
 - Fund the wallet with a few thousand Satoshis.
 
 In the following we will show you how to update your LightningATM online. Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password.
@@ -62,7 +63,10 @@ Save and exit editor: `CTRL+x` -> `y` -> `Enter`
 - It takes a few seconds for the display to update..
 - The ATM has started and you can use it normally or test the functions.
 - Stop the ATM with `CTRL+C`
-- To debug: Launch a second terminal window, login with ssh and access logs with `$ tail -f ~/.lightningATM/debug.log`
+
+To debug: Launch a second terminal window, login with ssh and access logs with 
+
+    $ tail -f ~/.lightningATM/debug.log`
 
 ### 4. If you don't like this version and want to get back
 
