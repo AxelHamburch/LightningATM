@@ -15,6 +15,9 @@ Before we finally merge the change, we want to discuss the [pull request](https:
 - Now install an extension. Go to `Extensions`, search for `LNURLw` and activate it with `ENABLE`.
 - Fund the wallet with a few thousand Satoshis.
 
+LNbits Wallet
+![LNbits Wallet](../pictures/we_need_your_help_LNbits.png)
+
 In the following we will show you how to update your LightningATM online. Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password.
 
 
@@ -34,7 +37,7 @@ Now your ATM is set to the new version. Next you have to configure it for the ne
 
     $ nano ~/.lightningATM/config.ini
 
-#### 2.2 Add the following lines at the very end
+#### Add the following lines at the very end
 
     [lnbits]
     # api credentials
@@ -49,7 +52,7 @@ Now your ATM is set to the new version. Next you have to configure it for the ne
 
 `Note:` Customize your `apikey = 7cd51a8a04...` from the LNbis wallet.
 
-#### 2.2 Change active wallet to lnbits
+#### Change active wallet to lnbits
 
     activewallet = lnbits
     
@@ -64,15 +67,17 @@ Save and exit editor: `CTRL+x` -> `y` -> `Enter`
 - The ATM has started and you can use it normally or test the functions.
 - Stop the ATM with `CTRL+C`
 
+Update procedure
+![Update procedure](../pictures/we_need_your_help_Update.png)
+
 To debug: Launch a second terminal window, login with ssh and access logs with 
 
     $ tail -f ~/.lightningATM/debug.log`
+    
+Log file to debug
+![Log file to debug](../pictures/we_need_your_help_logs.png)
 
-### 4. If you don't like this version and want to get back
-
-    $ git checkout master
-
-### 5. Final step
+### 4. Final step
 
 Restart the LightningATM service
 
