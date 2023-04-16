@@ -18,10 +18,9 @@ Before we finally merge the change, we want to discuss the [pull request](https:
 LNbits Wallet
 ![LNbits Wallet](../pictures/we_need_your_help_LNbits.png)
 
-In the following we will show you how to update your LightningATM online. Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password.
-
-
 ### 1. Update the LigthningATM 
+
+Next we will show you how to update your LightningATM online. Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password.
 
 We will load the new repository on the ATM and activate it. You have to stop the `LightningATM.service` once, otherwise you will get a strange display and the ATM will not work properly.  
 
