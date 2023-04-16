@@ -2,7 +2,13 @@
 
 We have now added LNbits as a new funding source for the LightningATM. 🎉
 
-Before we finally merge the change, we want to discuss the [pull request](https://github.com/21isenough/LightningATM/pull/78) a little bit. But you can already test the interface and for that we wrote this small guide here. It is for existing Pocket ATM's that need a new funding source. If you are setting up a new LightningATM, you just have to change under ["Perform an update, clone the ATM Github and install necessary additional options"](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#perform-an-update-clone-the-atm-github-and-install-necessary-additional-options) the line `$ git clone https://github.com/21isenough/LightningATM.git` to the temporary new path `https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` with the new LNbits interface. Later we will also adjust the main documentation for this and we will test it for the ATM with camera.
+Before we finally merge the change, we want to test and discuss the [pull request](https://github.com/21isenough/LightningATM/pull/78) a little bit. But you can already test the interface and for that we wrote this small guide. It is for existing Pocket ATM's that need a new funding source. When you set up a new LightningATM, you just need to replace the GitHub path from which the project is to be [cloned](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#perform-an-update-clone-the-atm-github-and-install-necessary-additional-options).
+
+old: `$ git clone https://github.com/21isenough/LightningATM.git`
+
+new: `$ git clone https://github.com/k9ert/LightningATM/tree/lnbits-compatibility-k9ert` 
+
+Later we will also adjust the main documentation for this and we will test it for the ATM with camera.
 
 ### 1. Quick guide on how to set up an LNbits wallet
 
@@ -11,8 +17,8 @@ Before we finally merge the change, we want to discuss the [pull request](https:
 - Bookmark the page and/or copy and paste the URL to a safe place. This will log you in to your wallet.
 - Understand the warning! It is a demo server for testing. Keep only the necessary Satoshis in the wallet. 
 - See a pop-up menu box on the right or bottom labeled `API info` and open it.
-- You should see `Admin key: 7cd51a8a04...`. The number-letter combination is the `apikey` you need right now. 
-- Now install an extension. Go to `Extensions`, search for `LNURLw` and activate it with `ENABLE`.
+- You should see `Admin key: 8682516eaf0c457...`. The number-letter combination is the 'apikey' that you will need afterwards.
+- But before that you need to install an extension. Go to `Extensions`, search for `LNURLw` and activate it with `ENABLE`.
 - Fund the wallet with a few thousand Satoshis.
 
 LNbits Wallet
@@ -20,7 +26,7 @@ LNbits Wallet
 
 ### 2. Update the LigthningATM 
 
-Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Hopefully you still have the assigned password. We will load the new repository on the ATM and activate it. You have to stop the `LightningATM.service` once, otherwise you will get a strange display and the ATM will not work properly.  
+Connect the ATM to the power supply and log in to your LightningATM via [Wifi/SSH](https://github.com/21isenough/LightningATM/blob/master/docs/guide/sdcard_and_wifi.md#carry-out-basic-software-settings-and-updates). You may find the IP in the network of your router. Open a command line editor and write the command `pi@192.168.x.x`. Hopefully you still have the assigned password. We will load the new repository on the ATM and activate it. You have to stop the `LightningATM.service` once, otherwise you will get a strange display and the ATM will not work properly.  
 
     $ sudo systemctl stop LightningATM.service
     $ sudo cp -r LightningATM LightningATM_Backup
@@ -40,14 +46,14 @@ Now your ATM is set to the new version. Next you have to configure it for the ne
     # api credentials
     url = https://legend.lnbits.com/api/v1
     # LNbits Wallet -> API info -> Admin Key
-    apikey = 
+    apikey = 8682516eaf0c457...
     # One of "invoice" or "lnurlw"
     method = lnurlw
     # only for lnurlw
     # millisseconds to redeem the lnurlw
     timeout = 90000
 
-`Note:` Customize your `apikey = 7cd51a8a04...` from the LNbis wallet.
+`Note:` Customize your `apikey = 8682516eaf0c457...` from the LNbis wallet.
 
 #### Change active wallet to lnbits
 
