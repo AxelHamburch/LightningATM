@@ -59,6 +59,16 @@ Now your ATM is set to the new version. Next you have to configure it for the ne
 
     activewallet = lnbits
     
+#### Check the config.ini again
+
+One or the other may have an older version of the LightningATM. Two things have been added. The option language and camera. Check if you have the following variable under [ATM]. If not, add them.
+
+    # Set language: "en", "de", "fr", "it", "es", "pt", "tr" currently available
+    language = en
+
+    # Do you have a camera? "False" or "True"
+    camera = False
+    
 Save and exit editor: `CTRL+x` -> `y` -> `Enter`
    
 ### 4. Start ATM for testing
