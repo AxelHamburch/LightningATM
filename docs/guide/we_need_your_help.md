@@ -69,6 +69,8 @@ One or the other may have an older version of the LightningATM. Two things have 
     # Do you have a camera? "False" or "True"
     camera = False
     
+Example, see [here](https://github.com/21isenough/LightningATM/blob/master/example_config.ini).
+    
 Save and exit editor: `CTRL+x` -> `y` -> `Enter`
    
 ### 4. Start ATM for testing
