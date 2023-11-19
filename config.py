@@ -175,7 +175,7 @@ elif "waveshare2in7" in conf["atm"]["display"]:
         logger.warning("Waveshare display library not installed.")
         print("Waveshare2in7 library not installed.")
         sys.exit("Exiting...")
-        
+  
 # Display - Waveshare 2.7 V2 is 264 * 176 pixels
 elif "waveshare2in7v2" in conf["atm"]["display"]:
     try:
