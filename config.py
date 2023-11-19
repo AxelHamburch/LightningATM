@@ -175,6 +175,16 @@ elif "waveshare2in7" in conf["atm"]["display"]:
         logger.warning("Waveshare display library not installed.")
         print("Waveshare2in7 library not installed.")
         sys.exit("Exiting...")
+        
+# Display - Waveshare 2.7 V2 is 264 * 176 pixels
+elif "waveshare2in7v2" in conf["atm"]["display"]:
+    try:
+        from waveshare_epd import epd2in7_V2
+        WAVESHARE = epd2in7_V2.EPD()
+    except ImportError:
+        logger.warning("Waveshare display library not installed.")
+        print("Waveshare2in7v2 library not installed.")
+        sys.exit("Exiting...")
 
 # Display - Waveshare 2.9 (D) is 296 * 128 pixels
 elif "waveshare2in9d" in conf["atm"]["display"]:
