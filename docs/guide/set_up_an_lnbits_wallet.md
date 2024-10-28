@@ -1,6 +1,6 @@
 ## Quick guide on how to set up an LNbits wallet
 
-- Go e.g. to the [ledgend.lnbits.com](https://legend.lnbits.com/) demo server
+- Go e.g. to the [demo.lnbits.com](https://demo.lnbits.com/) demo server
 - Assign a name and press `ADD A NEW WALLET`
 - Bookmark the page and/or copy and paste the URL to a safe place. This will log you in to your wallet.
 - Understand the warning! It is a demo server for testing. Keep only the necessary Satoshis in the wallet. 
